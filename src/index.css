@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components {
+  body {
+    @apply bg-customGray-100 font-inter cursor-none
+  }
+
+  .container {
+    @apply max-w-6xl w-full m-auto 
+  }
+
+  .button {
+    @apply rounded-[32px] bg-customGray-200 flex items-center py-4 px-7 font-bold	
+  }
+
+  .button .button__icon {
+    @apply ml-5 ease-out duration-300
+  }
+  .button:hover .button__icon {
+    @apply ml-8
+  }
+  .field__input, .field_select {
+    @apply relative inline
+  }
+  .field__input input, .field_select select {
+    @apply w-full border border-customBorder rounded-2xl px-4 py-3 pr-8 bg-transparent outline-none
+  }
+  .field__input .input__icon {
+    @apply flex items-center absolute top-2/4 -translate-y-2/4 font-semibold right-4
+  }
+
+  .tabs-container {
+    @apply w-full border border-customBorder rounded-xl p-0.5 flex
+  }
+  .tabs {
+    @apply w-full rounded-xl px-4 py-3 text-center text-customBlack font-semibold cursor-pointer 
+  }
+  .tabs.active {
+    @apply bg-customBlack text-white
+  }
+  .icon {
+    @apply duration-200
+  }
+  .icon.active {
+    @apply rotate-45 ease-linear
+  }
+
+  .section {
+    @apply h-screen flex justify-center items-center text-2xl;
+  }
+  .c-scrollbar {
+    @apply fixed top-0 right-0 h-full transform origin-right transition-transform transition-opacity w-11 opacity-0;
+  }
+  
+  .c-scrollbar:hover {
+    @apply transform scale-x-145 opacity-1;
+  }
+  
+  .c-scrollbar_thumb {
+    @apply absolute top-0 right-0 bg-black opacity-50 w-7 rounded-2 cursor-grab m-2;
+  }
+  
+  .has-scroll-dragging .c-scrollbar_thumb {
+    @apply cursor-grabbing;
+  }
+  
+}
+
+
+.has-scroll-smooth body {
+  overflow: hidden;
+}
+
+.has-scroll-smooth [data-scroll-container] {
+  min-height: 100vh;
+}
+
+
+.c-scrollbar:hover {
+  transform: scaleX(1.45);
+}
+
+.c-scrollbar:hover,
+.has-scroll-scrolling .c-scrollbar,
+.has-scroll-dragging .c-scrollbar {
+  opacity: 1;
+}
+
+
+.has-scroll-dragging .c-scrollbar_thumb {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
