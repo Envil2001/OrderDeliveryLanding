@@ -5,7 +5,7 @@
 
 @layer components {
   body {
-    @apply bg-customGray-100 font-inter cursor-none
+    @apply bg-customGray-100 font-inter cursor-none overflow-hidden
   }
 
   .container {
@@ -23,29 +23,13 @@
     @apply ml-8
   }
   .field__input, .field_select {
-    @apply relative inline
+    @apply relative 
   }
-  .field__input input, .field_select select {
-    @apply w-full border border-customBorder rounded-2xl px-4 py-3 pr-8 bg-transparent outline-none
+  .field__input input, .form-control  {
+    @apply flex items-center justify-between w-full border border-customBorder rounded-2xl px-4 py-3 bg-transparent outline-none
   }
   .field__input .input__icon {
     @apply flex items-center absolute top-2/4 -translate-y-2/4 font-semibold right-4
-  }
-
-  .tabs-container {
-    @apply w-full border border-customBorder rounded-xl p-0.5 flex
-  }
-  .tabs {
-    @apply w-full rounded-xl px-4 py-3 text-center text-customBlack font-semibold cursor-pointer 
-  }
-  .tabs.active {
-    @apply bg-customBlack text-white
-  }
-  .icon {
-    @apply duration-200
-  }
-  .icon.active {
-    @apply rotate-45 ease-linear
   }
 
   .section {
